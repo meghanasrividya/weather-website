@@ -1,71 +1,101 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- Basic Meta Tags -->
+  <meta charset="UTF-8"> <!-- Character encoding -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Responsive viewport -->
+  
+  <!-- Page Title -->
   <title>ClimaVoice - Weather Dashboard</title>
   
-  <!-- Bootstrap CSS -->
+  <!-- External CSS Dependencies -->
+  <!-- Bootstrap 5 CSS -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-  
-  <!-- Custom CSS -->
+  <!-- Custom Styles (override Bootstrap where needed) -->
   <link rel="stylesheet" href="styles.css">
-  
-  <!-- Font Awesome -->
+  <!-- Font Awesome Icons -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 
+<!-- Body with Bootstrap Background Utility Class -->
 <body class="bg-light">
-  <div class="container mt-5">
-    <div class="card shadow-lg">
+  <!-- Main Container with Bootstrap Spacing Utilities -->
+  <div class="container mt-5"> <!-- Top margin 5 units (3rem) -->
+    
+    <!-- Card Component for Dashboard Container -->
+    <div class="card shadow-lg"> <!-- Large shadow for depth effect -->
+      
+      <!-- Card Header with Primary Color -->
       <div class="card-header bg-primary text-white">
-        <h1 class="card-title text-center mb-0">ClimaVoice</h1>
+        <!-- Main Title Centered with Bootstrap Typography Classes -->
+        <h1 class="card-title text-center mb-0">ClimaVoice</h1> <!-- mb-0 removes bottom margin -->
       </div>
       
+      <!-- Card Body Contains All Interactive Elements -->
       <div class="card-body">
-        <!-- Search Section -->
-        <div class="row g-3 mb-4">
+        <!-- Search Section Using Bootstrap Grid -->
+        <div class="row g-3 mb-4"> <!-- g-3 adds gutter spacing, mb-4 bottom margin -->
+          
+          <!-- Input Group Column (8/12 width on medium screens) -->
           <div class="col-md-8">
+            <!-- Input Group Combines Text Input and Microphone Button -->
             <div class="input-group">
+              <!-- Primary Text Input Field -->
               <input type="text" 
                      id="location-input" 
                      class="form-control" 
                      placeholder="Enter city name or postal code">
-              <button id="mic-button" class="btn btn-outline-secondary" type="button">
-                <i class="fas fa-microphone"></i>
+              
+              <!-- Microphone Button with Outline Style -->
+              <button id="mic-button" 
+                      class="btn btn-outline-secondary" 
+                      type="button"
+                      aria-label="Activate voice input">
+                <i class="fas fa-microphone"></i> <!-- Font Awesome icon -->
               </button>
             </div>
           </div>
+          
+          <!-- Search Button Column (4/12 width on medium screens) -->
           <div class="col-md-4">
+            <!-- Primary Action Button with Icon -->
             <button id="fetch-weather" class="btn btn-primary w-100">
-              <i class="fas fa-cloud-sun me-2"></i>Get Weather
+              <i class="fas fa-cloud-sun me-2"></i> <!-- Weather icon with right margin -->
+              Get Weather
             </button>
           </div>
         </div>
 
-        <!-- Current Weather -->
-        <div id="weather-display" class="text-center mb-5">
-          <h2 class="display-4 mb-3" id="location-name">-</h2>
+        <!-- Current Weather Display Section -->
+        <div id="weather-display" class="text-center mb-5"> <!-- Center align + bottom margin -->
+          <!-- Location Name with Bootstrap Display Heading -->
+          <h2 class="display-4 mb-3" id="location-name">-</h2> <!-- Large heading -->
           <div class="weather-info">
-            <p class="display-1 text-primary mb-0" id="temperature">-</p>
-            <p class="lead text-muted" id="weather-description">-</p>
+            <!-- Temperature Display with Primary Color -->
+            <p class="display-1 text-primary mb-0" id="temperature">-</p> <!-- Extra large text -->
+            <!-- Weather Description with Muted Text -->
+            <p class="lead text-muted" id="weather-description">-</p> <!-- Lead paragraph style -->
           </div>
         </div>
 
-        <!-- 5-Day Forecast -->
-        <h3 class="h4 text-center mb-4 forecast-heading">5-Day Forecast</h3>
-        <div id="forecast-display" class="row g-4"></div>
+        <!-- 5-Day Forecast Section -->
+        <h3 class="h4 text-center mb-4 forecast-heading">5-Day Forecast</h3> <!-- Medium heading -->
+        <!-- Forecast Container Using Bootstrap Grid -->
+        <div id="forecast-display" class="row g-4"></div> <!-- g-4 adds larger gutter spacing -->
 
-        <!-- Error Message -->
-        <div id="error-message" class="alert alert-danger mt-4 d-none"></div>
+        <!-- Error Message Container -->
+        <!-- Initially hidden (d-none) and styled as danger alert -->
+        <div id="error-message" 
+             class="alert alert-danger mt-4 d-none" 
+             role="alert"></div> <!-- ARIA role for accessibility -->
       </div>
     </div>
   </div>
 
-  <!-- Bootstrap JS Bundle -->
+  <!-- Bootstrap JavaScript Bundle (Popper.js included) -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
   
-  <!-- Custom JS -->
+  <!-- Custom JavaScript File -->
   <script src="script.js"></script>
 </body>
 </html>
