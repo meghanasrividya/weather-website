@@ -92,6 +92,8 @@ const displayWeather = (data, cityName) => {
             backgroundUrl = "url('images/cloudy-day.jpg')";
             break;
         case "rain":
+        case "moderate rain":
+        case "heavy rain":
             backgroundUrl = "url('images/rainy-day.jpg')";
             break;
         case "snow":
