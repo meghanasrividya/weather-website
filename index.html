@@ -1,0 +1,106 @@
+<!-- index.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- CHARACTER ENCODING AND VIEWPORT SETTINGS -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- SEO AND SOCIAL MEDIA META TAGS -->
+    <meta name="description" content="ClimaVoice - Voice-controlled weather forecasting application">
+    <meta name="keywords" content="weather, forecast, voice recognition, climate">
+    
+    <!-- PAGE TITLE -->
+    <title>ClimaVoice - Weather Dashboard</title>
+    
+    <!-- EXTERNAL DEPENDENCIES -->
+    <!-- Bootstrap CSS for responsive layout components -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <!-- Custom styles -->
+    <link rel="stylesheet" href="styles.css">
+    
+    <!-- FAVICON -->
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+</head>
+<body class="bg-light">
+    <!-- MAIN CONTAINER -->
+    <div class="container mt-5">
+        <!-- PRIMARY CARD COMPONENT -->
+        <div class="card shadow-lg">
+            
+            <!-- APPLICATION HEADER -->
+            <header class="card-header bg-primary text-white">
+                <h1 class="card-title text-center mb-0">ClimaVoice</h1>
+            </header>
+
+            <!-- MAIN CONTENT AREA -->
+            <div class="card-body">
+                
+                <!-- SEARCH SECTION -->
+                <section class="row g-3 mb-4" aria-labelledby="search-heading">
+                    <div class="col-md-8">
+                        <div class="input-group">
+                            <!-- LOCATION INPUT FIELD -->
+                            <input type="text" 
+                                   id="location-input" 
+                                   class="form-control" 
+                                   placeholder="Enter city name or postal code"
+                                   aria-label="Location input for weather search">
+                            <!-- VOICE INPUT BUTTON -->
+                            <button id="mic-button" 
+                                    class="btn btn-outline-secondary" 
+                                    type="button"
+                                    aria-label="Activate voice input">
+                                <i class="fas fa-microphone"></i>
+                            </button>
+                        </div>
+                    </div>
+                    <!-- SEARCH BUTTON -->
+                    <div class="col-md-4">
+                        <button id="fetch-weather" class="btn btn-primary w-100">
+                            <i class="fas fa-cloud-sun me-2"></i>
+                            Get Weather
+                        </button>
+                    </div>
+                </section>
+
+                <!-- CURRENT WEATHER DISPLAY -->
+                <section id="weather-display" class="text-center mb-5" aria-live="polite">
+                    <h2 class="display-4 mb-3" id="location-name">-</h2>
+                    <div class="weather-info">
+                        <p class="display-1 text-primary mb-0" id="temperature">-</p>
+                        <p class="lead text-muted" id="weather-description">-</p>
+                    </div>
+                </section>
+
+                <!-- 5-DAY FORECAST SECTION -->
+                <section aria-labelledby="forecast-heading">
+                    <h3 id="forecast-heading" class="h4 text-center mb-4">5-Day Forecast</h3>
+                    <div id="forecast-display" class="row g-4"></div>
+                </section>
+
+                <!-- LOADING INDICATOR -->
+                <div id="loading-spinner" class="text-center d-none">
+                    <div class="spinner-border text-primary" role="status">
+                        <span class="visually-hidden">Loading...</span>
+                    </div>
+                </div>
+
+                <!-- ERROR MESSAGE CONTAINER -->
+                <div id="error-message" 
+                     class="alert alert-danger mt-4 d-none" 
+                     role="alert"
+                     aria-live="assertive"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- EXTERNAL SCRIPTS -->
+    <!-- Bootstrap JS bundle (Popper.js included) -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Custom application logic -->
+    <script src="script.js"></script>
+</body>
+</html>
