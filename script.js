@@ -137,7 +137,7 @@ const displayForecast = (data) => {
         // 📌 Create Forecast Card (HTML)
         const forecastCard = `
             <div class="col-md-2 text-center">
-                <h5>${date}</h5>
+                <h6>${date}</h5>
                 <img src="${icon}" alt="${description}">
                 <p class="mb-0">${temp}°C</p>
                 <p class="text-muted">${description}</p>

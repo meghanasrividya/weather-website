@@ -25,4 +25,7 @@
 - 📊 **More Weather Metrics (Humidity, Wind, Pressure, etc.)**
 - 🌙 **Dark Mode Support**
 
+## Screenshots
 
+![screenshot 1](ClimaVoice.jpg)
+![screenshot 2](ClimaVoice1.png)
