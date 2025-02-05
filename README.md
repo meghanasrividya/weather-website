@@ -23,6 +23,5 @@
 - 📍 **Auto-detect Location (Geolocation API)**
 - 📊 **More Weather Metrics (Humidity, Wind, Pressure, etc.)**
 - 🌙 **Dark Mode Support**
-- 🌄 **Dynamic Background Images** – Change the background according to the weather (e.g., sunny, rainy, snowy).
 
 
