@@ -12,6 +12,19 @@ document.getElementById("fetch-weather").addEventListener("click", () => {
     }
 });
 
+// Event listener for enter key upon search
+document.getElementById("location-input").addEventListener("keypress", (e) => {
+    if (e.key === 'Enter') {
+        const city = document.getElementById("location-input").value.trim(); // Get city name from input field
+
+        if (city) {
+            fetchWeather(city); // If input is valid, fetch weather data
+        } else {
+            showError("Please enter a city name."); // Show error if input is empty
+        }
+    }
+});
+
 // 🎤 Event Listener for Voice Recognition Button
 document.getElementById("mic-button").addEventListener("click", () => {
     const recognition = new (window.SpeechRecognition || window.webkitSpeechRecognition)(); // Initialize Speech API
