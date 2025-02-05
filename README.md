@@ -27,7 +27,7 @@
 
 ## Screenshots
 
-![screenshot ](ClimaVoice1.jpg)
-![screenshot ](ClimaVoice2.jpg)
-![screenshot ](ClimaVoice3.jpg)
+![screenshot ](images/ClimaVoice1.jpg)
+![screenshot ](images/ClimaVoice2.jpg)
+![screenshot ](images/ClimaVoice3.jpg)
 
