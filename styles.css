@@ -1,0 +1,17 @@
+body {
+  font-family: "Arial", sans-serif;
+}
+
+.weather-info {
+  background: #f8f9fa;
+  padding: 15px;
+  border-radius: 10px;
+}
+
+.forecast-heading {
+  color: #007bff;
+}
+
+#error-message {
+  font-weight: bold;
+}
