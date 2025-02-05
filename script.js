@@ -41,7 +41,7 @@ const fetchWeather = async (city) => {
         const geoUrl = `https://api.openweathermap.org/geo/1.0/direct?q=${city}&limit=1&appid=${API_KEY}`;
         const geoResponse = await fetch(geoUrl); // Fetch location data
         const geoData = await geoResponse.json(); // Convert response to JSON
-
+        console.log(geoData)
         if (geoData.length === 0) { 
             showError("City not found. Try another name."); // Handle invalid city names
             return;
@@ -53,12 +53,12 @@ const fetchWeather = async (city) => {
         const weatherUrl = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${API_KEY}&units=metric`;
         const weatherResponse = await fetch(weatherUrl); // Fetch weather data
         const weatherData = await weatherResponse.json(); // Convert response to JSON
-
+        console.log(weatherData)
         // 3️⃣ Fetch 5-Day Weather Forecast
         const forecastUrl = `https://api.openweathermap.org/data/2.5/forecast?lat=${lat}&lon=${lon}&appid=${API_KEY}&units=metric`;
         const forecastResponse = await fetch(forecastUrl); // Fetch forecast data
         const forecastData = await forecastResponse.json(); // Convert response to JSON
-
+        console.log(forecastData); 
         // ✅ Display Weather Data
         displayWeather(weatherData, name);
         displayForecast(forecastData);
@@ -73,8 +73,44 @@ const displayWeather = (data, cityName) => {
     document.getElementById("location-name").textContent = cityName; // Update city name in UI
     document.getElementById("temperature").textContent = `${data.main.temp}°C`; // Display temperature
     document.getElementById("weather-description").textContent = data.weather[0].description; // Show weather condition
+    updateBackground(data.weather[0].description.toLowerCase());
     document.getElementById("error-message").classList.add("d-none"); // Hide error message (if any)
 };
+
+     const updateBackground = (weatherCondition) => {
+      let backgroundUrl;
+
+
+    // Define a mapping of weather conditions to background images
+    switch (weatherCondition) {
+        case "clear sky":
+            backgroundUrl = "url('images/sunny-day.jpg')";
+            break;
+        case "few clouds":
+        case "scattered clouds":
+        case "broken clouds":
+            backgroundUrl = "url('images/cloudy-day.jpg')";
+            break;
+        case "rain":
+            backgroundUrl = "url('images/rainy-day.jpg')";
+            break;
+        case "snow":
+            backgroundUrl = "url('images/snowy-day.jpg')";
+            break;
+        case "thunderstorm":
+            backgroundUrl = "url('images/thunderstorm-day.jpg')";
+            break;
+        default:
+            backgroundUrl = "url('images/default-day.jpg')"; // Default background if no condition matches
+            break;
+    }
+
+    // Apply the background image to the body or any container you want
+    document.body.style.backgroundImage = backgroundUrl;
+    document.body.style.backgroundSize = "cover";  // Ensures the image covers the entire screen
+    document.body.style.backgroundPosition = "center";  // Center the image
+};
+
 
 // 📆 Function to Display 5-Day Weather Forecast
 const displayForecast = (data) => {
