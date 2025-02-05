@@ -1,24 +1,28 @@
-# weather-website
+# 🌤 ClimaVoice - Weather Dashboard
 
-# Wireframe
+**ClimaVoice** is an interactive weather dashboard that provides **real-time weather updates** and a **5-day forecast** for any city worldwide. It features **voice recognition**, allowing users to search for weather information using their voice.
 
-+---------------------------------------------------+
-|                   Weather Dashboard              |
-+---------------------------------------------------+
-| [Enter city name or postal code] [Mic] [Get Weather]
-+---------------------------------------------------+
-|                                                   |
-|                   Location Name                   |
-|                   Temperature (°C)                |
-|                   Weather Description             |
-|                                                   |
-+---------------------------------------------------+
-|                   5-Day Forecast                  |
-| +----------------+  +----------------+  +--------+|
-| | Date           |  | Date           |  | Date   ||
-| | Temp: XX°C     |  | Temp: XX°C     |  | Temp:  ||
-| | Weather: Desc  |  | Weather: Desc  |  | Desc   ||
-| +----------------+  +----------------+  +--------+|
-+---------------------------------------------------+
-| Error: Location not found.                        |
-+---------------------------------------------------+
+## 🚀 Features
+
+- **🌍 Real-time Weather Data** – Get live temperature, weather conditions, and more.
+- **📆 5-Day Forecast** – View upcoming weather trends.
+- **🎤 Voice Recognition** – Search by speaking instead of typing.
+- **🔄 Responsive & User-Friendly** – Built with Bootstrap for a seamless experience.
+- **🌡 Temperature in Celsius** – (Future enhancements can add Fahrenheit & Kelvin support).
+
+## 🛠️ Technologies Used
+
+- **HTML5, CSS3, JavaScript** – Core web technologies.
+- **Bootstrap 5** – For responsive UI design.
+- **OpenWeatherMap API** – Fetches weather and forecast data.
+- **Web Speech API** – Enables voice search functionality.
+
+## 🔥 Future Enhancements
+
+- 🌡 **Temperature Unit Toggle (°C / °F / K)**
+- 📍 **Auto-detect Location (Geolocation API)**
+- 📊 **More Weather Metrics (Humidity, Wind, Pressure, etc.)**
+- 🌙 **Dark Mode Support**
+- 🌄 **Dynamic Background Images** – Change the background according to the weather (e.g., sunny, rainy, snowy).
+
+
