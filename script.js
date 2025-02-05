@@ -82,32 +82,19 @@ const displayWeather = (data, cityName) => {
 
 
     // Define a mapping of weather conditions to background images
-    switch (weatherCondition) {
-        case "clear sky":
-            backgroundUrl = "url('images/sunny-day.jpg')";
-            break;
-        case "overcast clouds":
-        case "few clouds":
-        case "scattered clouds":
-        case "broken clouds":
-            backgroundUrl = "url('images/cloudy-day.jpg')";
-            break;
-        case "rain":
-        case "moderate rain":
-        case "heavy rain":
-            backgroundUrl = "url('images/rainy-day.jpg')";
-            break;
-        case "snow":
-            backgroundUrl = "url('images/snowy-day.jpg')";
-            break;
-        case "thunderstorm":
-            backgroundUrl = "url('images/thunderstorm-day.jpg')";
-            break;
-        default:
-            backgroundUrl = "url('images/default-day.jpg')"; // Default background if no condition matches
-            break;
+    if (weatherCondition === "clear sky") {
+        backgroundUrl = "url('images/sunny-day.jpg')";
+    } else if (["overcast clouds", "few clouds", "scattered clouds", "broken clouds"].includes(weatherCondition)) {
+        backgroundUrl = "url('images/cloudy-day.jpg')";
+    } else if (weatherCondition.includes("rain")) {
+        backgroundUrl = "url('images/rainy-day.jpg')";
+    } else if (weatherCondition.includes("snow")) {
+        backgroundUrl = "url('images/snowy-day.jpg')";
+    } else if (weatherCondition.includes("thunderstorm")) {
+        backgroundUrl = "url('images/thunderstorm-day.jpg')";
+    } else {
+        backgroundUrl = "url('images/default-day.jpg')"; // Default background
     }
-
     // Apply the background image to the body or any container you want
     document.body.style.backgroundImage = backgroundUrl;
     document.body.style.backgroundSize = "cover";  // Ensures the image covers the entire screen
