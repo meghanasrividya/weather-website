@@ -86,6 +86,7 @@ const displayWeather = (data, cityName) => {
         case "clear sky":
             backgroundUrl = "url('images/sunny-day.jpg')";
             break;
+        case "overcast clouds":
         case "few clouds":
         case "scattered clouds":
         case "broken clouds":
