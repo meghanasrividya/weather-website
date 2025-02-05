@@ -1,11 +1,19 @@
 body {
   font-family: "Arial", sans-serif;
 }
+.bg-light{
+  border-radius: 50px;
+}
+.container {
+ max-width: 50%;
+ max-height: 50%;
+
+}
 
 .weather-info {
   background: #f8f9fa;
   padding: 15px;
-  border-radius: 10px;
+  border-radius: 50px;
 }
 
 .forecast-heading {
@@ -14,4 +22,11 @@ body {
 
 #error-message {
   font-weight: bold;
+}
+
+#forecast-display {
+  font-size:smaller;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
